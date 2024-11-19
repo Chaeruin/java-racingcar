@@ -12,11 +12,10 @@ public class OutputView {
         System.out.print("-".repeat(car.getForwardNumber()) + "\n");
     }
 
-    public void printRacingResult(List<Car> racing, List<Car> winner) {
+    public void printRacingResult(List<Car> racing) {
         for (Car car: racing) {
             printRace(car);
         }
-        printWinner(winner);
     }
 
     public void printWinner(List<Car> winner) {

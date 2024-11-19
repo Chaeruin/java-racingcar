@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.service;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.LinkedList;
@@ -24,5 +24,25 @@ public class CarService {
         if (isForward()) {
             car.setForwardNumber(car.getForwardNumber() + 1);
         }
+    }
+
+    public void goCarsForward(List<Car> cars) {
+        for (Car car: cars) {
+            goForward(car);
+        }
+    }
+
+    public List<Car> getWinner(List<Car> cars) {
+        List<Car> winner = new LinkedList<>();
+        int max = -1;
+        for (Car car: cars) {
+            max = Math.max(max, car.getForwardNumber());
+        }
+        for (Car car: cars) {
+            if (car.getForwardNumber() == max) {
+                winner.add(car);
+            }
+        }
+        return winner;
     }
 }
