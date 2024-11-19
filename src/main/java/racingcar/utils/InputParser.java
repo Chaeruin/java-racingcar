@@ -23,6 +23,9 @@ public class InputParser {
         int parseNumber;
         try {
             parseNumber = Integer.parseInt(number);
+            if (parseNumber == 0) {
+                throw new IllegalArgumentException(ErrorMessage.INVALID_NUMBER_ZERO.getErrorMessage());
+            }
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_NO_INPUT.getErrorMessage());
         }
