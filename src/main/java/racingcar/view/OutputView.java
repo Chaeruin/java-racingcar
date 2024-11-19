@@ -16,6 +16,7 @@ public class OutputView {
         for (Car car: racing) {
             printRace(car);
         }
+        System.out.println();
     }
 
     public void printWinner(List<Car> winner) {
